@@ -3,4 +3,4 @@ gunicorn==19.9.0
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
-pyshortner==1.0.1
+pyshortners==1.0.1
