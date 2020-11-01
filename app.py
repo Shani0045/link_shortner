@@ -1,6 +1,6 @@
 from flask import*
 from pyshorteners import Shortener
-import clipboard as clip
+import pyperclip as pc
 app=Flask(__name__)
 @app.route("/")
 def index():
@@ -51,7 +51,7 @@ def short_link():
                 return render_template("index.html")
             
         elif request.form['btn']=='copy':
-            a=clip.copy(txt2)
+            a=pc.copy(txt2)
             return render_template("index.html",c="URL copied")
             
     except:
