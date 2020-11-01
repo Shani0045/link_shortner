@@ -63,6 +63,6 @@ def short_link():
     except:
         return render_template("index.html")
     
-if ___name__=="__main__":
+if __name__=="__main__":
     app.run()
 
