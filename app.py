@@ -50,10 +50,6 @@ def short_link():
             elif link=="none":
                 return render_template("index.html")
             
-        else:
-            pc.copy(txt2)
-            p=pc.paste()
-            return render_template("index.html",c=p)
             
     except:
         return render_template("index.html")
