@@ -1,8 +1,6 @@
 from flask import*
 from pyshorteners import Shortener
-import pyperclip as pc
 app=Flask(__name__)
-app.config['SECRET_KEY']="895f4ee53ee8778eb0bec150f28599ceca"
 @app.route("/")
 def index():
     return render_template("index.html")
