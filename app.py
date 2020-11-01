@@ -57,7 +57,7 @@ def short_link():
                 return render_template("index.html")
             
         elif request.form['btn']=='copy':
-            V=clip.copy(txt2)
+            c=clip.copy(txt2)
             return render_template("index.html",c="URL copied")
             
     except:
