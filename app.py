@@ -50,7 +50,7 @@ def short_link():
             elif link=="none":
                 return render_template("index.html")
             
-        elif request.form['btn']=='copy':
+        else:
             pc.copy(txt2)
             return render_template("index.html",c="URL copied")
             
