@@ -55,12 +55,14 @@ def short_link():
     except:
         return render_template("index.html")
 
-@app.route("/copy",methods=["POST"])
+@app.route("/copy",methods=["POST","GET"])
 def copy():
-    tx=request.form['txt']
-    pc.copy(tx)
-    t=pc.paste()
-    return render_template("index.html",c="URL copied")  
+    if request.method=="POST":
+        tx=request.form['txt']
+        pc.copy(tx)
+        t=pc.paste()
+        return render_template("index.html",c="url copy")
+    return render_template("index.html",c="not copied")
     
 if __name__=="__main__":
     app.run()
