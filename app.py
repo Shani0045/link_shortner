@@ -7,13 +7,15 @@ def index():
     return render_template("index.html")
 @app.route("/short_link",methods=["GET","POST"])
 def short_link():
+    
     try:
+        tx=request.form['txt']
         x=request.form['a']
         link=request.form['b']
-        txt2=request.form['txt']
+        
         
         if request.form['btn']=='url':
-                
+            
             if link=="nullpointer":
                 s=Shortener()
                 q=s.nullpointer.short(x)
@@ -49,10 +51,12 @@ def short_link():
 
             elif link=="none":
                 return render_template("index.html")
-        else:
-            pc.copy(txt2) 
             
-            return render_template("index.html",c="url copied")
+        elif request.form['btn']=="copy":
+            pc.copy(tx)
+            t=pc.paste()
+            return render_template("index.html",c=t)
+            
     except:
         return render_template("index.html")
     
