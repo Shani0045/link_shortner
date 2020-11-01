@@ -1,6 +1,6 @@
 from flask import*
 from pyshorteners import Shortener
-import copypaste as pc
+import pyperclip as pc
 app=Flask(__name__)
 app.config['SECRET_KEY']="895f4ee53ee8778eb0bec150f28599ceca"
 @app.route("/")
@@ -51,12 +51,5 @@ def short_link():
     except:
         return render_template("index.html")
 
-@app.route("/copy",methods=["POST","GET"])
-def copy():
-    tx=request.form['txt']
-    pc.copy(tx)
-    t=pc.paste()
-    return render_template("index.html",c="url copy")
-    
 if __name__=="__main__":
     app.run()
