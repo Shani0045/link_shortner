@@ -16,7 +16,7 @@ def short_link():
     try:
         x=request.form['a']
         link=request.form['b']
-        txt2=request.form['txt']
+  
         
         if request.form['btn']=='url':
             
@@ -57,7 +57,7 @@ def short_link():
                 return render_template("index.html")
             
         elif request.form['btn']=='copy':
-            c=clip.copy(txt2)
+            a=clip.copy(request.form["txt"])
             return render_template("index.html",c="URL copied")
             
     except:
