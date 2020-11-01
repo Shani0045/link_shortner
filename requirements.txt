@@ -4,4 +4,4 @@ itsdangerous==1.1.0
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
 pyshorteners==1.0.1
-pyperclip==1.7.0
+copypaste==0.2
