@@ -52,7 +52,8 @@ def short_link():
             
         else:
             pc.copy(txt2)
-            return render_template("index.html",c="URL copied")
+            p=pc.paste()
+            return render_template("index.html",c=p)
             
     except:
         return render_template("index.html")
