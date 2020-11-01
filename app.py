@@ -13,7 +13,7 @@ def short_link():
         txt2=request.form['txt']
         
         if request.form['btn']=='url':
-            
+                
             if link=="nullpointer":
                 s=Shortener()
                 q=s.nullpointer.short(x)
@@ -49,8 +49,10 @@ def short_link():
 
             elif link=="none":
                 return render_template("index.html")
+        else:
+            pc.copy(txt2) 
             
-            
+            return render_template("index.html",c="url copied")
     except:
         return render_template("index.html")
     
